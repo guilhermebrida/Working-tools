@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "working-tools"
+version = "0.1.0"
+description = ""
+authors = ["Guilherme Brida <guilherme.brida@crearesistemas.com.br>"]
+readme = "README.md"
+packages = [{include = "working_tools"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aes-pkcs5 = "^1.0.2"
+pycryptodome = "^3.19.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
