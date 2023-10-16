@@ -1,6 +1,8 @@
 import json
 import os
 
+##CRIA O ARQUIVO txt A PARTIR DE UM JSON NO SVN
+
 with open('scripts_vl1012_08.txt','r', encoding='utf-8')as f:
     files = f.read().split('\n')
     print(files)

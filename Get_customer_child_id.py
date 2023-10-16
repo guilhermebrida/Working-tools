@@ -1,6 +1,8 @@
 from bitmap import json,re,dlg,listar_arquivos
 
 
+##CRIA PLANILHA COM CUSTOMER CHILD ID DE CADA ARQUIVO JSON DA PASTA
+
 def get_cc_tag(pasta:list):
     sem_tag = [] 
     for file in pasta:
