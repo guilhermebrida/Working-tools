@@ -7,8 +7,8 @@ import re
 
 def similaridade_strings(arquivo_a, arquivo_b):
     # Calcula a similaridade entre duas strings    
-    if re.search('.*Script_Adicional.*',arquivo_a):
-        arquivo_a = re.sub('Script_Adicional_','',arquivo_a)
+    if re.search('.*Script.Adicional.*',arquivo_a):
+        arquivo_a = re.sub('Script.Adicional.','',arquivo_a)
     return difflib.SequenceMatcher(None, arquivo_a.upper(), arquivo_b.upper()).ratio()
 
 
@@ -74,7 +74,7 @@ def agrupar_arquivos_parecidos(pasta, limiar_similaridade=0.60):
     json_in_grupos = set([os.path.basename(elemento) for sublista in grupos for elemento in sublista if elemento.endswith('.json')])
     json_in_pasta = set(arquivos for arquivos in os.listdir(pasta) if arquivos.endswith('.json'))
     json_sem_match = json_in_pasta - json_in_grupos
-    pprint(list(json_sem_match))
+    # pprint(list(json_sem_match))
 
     return grupos,grupo_nao_similar,json_sem_match
 

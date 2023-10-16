@@ -11,7 +11,7 @@ import compara_scripts as cs
 
 
 if __name__ == '__main__':
-    nome_xls = 'diff_comandos_VL10.xls'
+    nome_xls = 'docs/diff_comandos_VL10.xls'
     arquivo1 = cs.open_txt(dlg.askopenfilename())   
     arquivo2 = cs.open_json(dlg.askopenfilename())
     if not os.path.exists(nome_xls):
