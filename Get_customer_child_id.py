@@ -14,9 +14,9 @@ def get_cc_tag(pasta:list):
         except:
             sem_tag.append(file)
             print('Nao tem cc_tag',nome)
-        with open('cc_tag.xls', 'a') as f:
+        with open('cc_tag_vl1012.xls', 'a') as f:
             f.write(f'{nome};{cc_tag}\n')
-    with open('cc_tag.xls', 'a') as f:
+    with open('cc_tag_vl1012.xls', 'a') as f:
         f.write('\nSem cc_tag\n')
         for i in sem_tag:
             f.write(f'{i}\n')

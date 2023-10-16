@@ -13,7 +13,7 @@ def similaridade_strings(arquivo_a, arquivo_b):
 
 
 
-def agrupar_arquivos_parecidos(pasta, limiar_similaridade=0.80):
+def agrupar_arquivos_parecidos(pasta, limiar_similaridade=0.60):
     arquivos = os.listdir(pasta)
     
     grupos = []

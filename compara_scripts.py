@@ -68,7 +68,7 @@ def open_files(lista:list[list],nome_xls:str):
 
 if __name__ == '__main__':
     pasta = dlg.askdirectory()
-    nome_xls = 'diff_comandos_adicionais.xls'
+    nome_xls = 'perfis_vl1012.xls'
     list_files,nao_agrupados,json_sem_match = agrupar_arquivos_parecidos(pasta)
     open_files(list_files,nome_xls)
     with open(nome_xls, 'a') as f:
