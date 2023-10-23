@@ -1,5 +1,6 @@
 import cx_Oracle
 import unittest
+import platform
 
 
 username = "AERO"
@@ -18,7 +19,11 @@ OUT_STATUS = 0
 class TestStringMethods(unittest.TestCase):
     def __init__(self, methodName='runTest'):
         super(TestStringMethods, self).__init__(methodName)
-        cx_Oracle.init_oracle_client(lib_dir=r"C:\oracle\instantclient_21_11")
+        system = platform.system()
+        if system == "Linux":
+            cx_Oracle.init_oracle_client(lib_dir="/opt/oracle/instantclient_21_4")
+        elif system == "Windows":
+            cx_Oracle.init_oracle_client(lib_dir=r"C:\oracle\instantclient_21_11")
         self.connection = cx_Oracle.connect(f"{username}/{password}@{host}:{port}/{database}")
         self.cursor = self.connection.cursor()
         self.IN_INBOX_ID = 0
