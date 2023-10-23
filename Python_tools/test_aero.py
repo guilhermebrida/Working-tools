@@ -21,7 +21,7 @@ class TestStringMethods(unittest.TestCase):
         super(TestStringMethods, self).__init__(methodName)
         system = platform.system()
         if system == "Linux":
-            cx_Oracle.init_oracle_client(lib_dir="/opt/oracle/instantclient_21_4")
+            cx_Oracle.init_oracle_client(lib_dir="/usr/lib/oracle/21/client64/lib")
         elif system == "Windows":
             cx_Oracle.init_oracle_client(lib_dir=r"C:\oracle\instantclient_21_11")
         self.connection = cx_Oracle.connect(f"{username}/{password}@{host}:{port}/{database}")
