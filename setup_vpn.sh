@@ -3,7 +3,7 @@ VPNNAME="CREARE-OCI"
 BASEDIR=$(dirname "$0")
 echo "Configurando VPN..."
 echo
-USERNAME="guilhermebrida"
+USERNAME="guilherme.brida"
 PASSWORD="Gg*9695948586"
 echo && echo
 nmcli connection delete $VPNNAME &> /dev/null
