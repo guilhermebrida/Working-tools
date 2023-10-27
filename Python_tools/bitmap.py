@@ -10,7 +10,7 @@ import base64
 padroes = {
     'Tracking': '>SED00.*V0.*',
     'Faixas RPM': 'SUT13,QCT27',
-    'Discretas': '>SED10.*SCT78 HFFFFFFFF.*',
+    'Discretas': '>SED135.*IN01\+\+.*<',
     'Excesso RPM': '>SED32.*V0.*',
     'Parada motor ligado': '>SED37.*V2.*',
     'Cercas': '>SED81 RR.*',
@@ -20,12 +20,10 @@ padroes = {
     'Aceleração brusca': '>SED208.*V2.*',
     'Mifare externo': '.*RU00\+\+',
     'Mifare interno': '>SED19 IO03\+\+.',
-    # 'Condução ininterrupta': '>SED115 CC45.*',
     'Condução ininterrupta': '>SSH151<',
     'Modo Sleep': '>SED15 LP01\+\+.*',
     'Rotas SP': '>SED81 VM01\+\+.*',
     'Tablet': '>SED169.*TRM.*',
-    # 'Lora': '>SED126 RF32\+\+.*',
     'Lora': '>VSMG0000.*',
     'Bloqueio': '>SED59.*V2.*',
     'Banco de motorista': '>SED105.*AX.*',
@@ -50,7 +48,10 @@ def change_files(path):
 
         indices = [i for i, x in enumerate(resultados.values()) if x == True]
         bitmap = bitmap_funcionaliades(indices)
-        content = re.sub('>SSO<',f'//Bitmap funcionalidades\n>SCT95 {bitmap}<\n>SSO<',content)
+        if re.search('>SCT95.*<',content) is not None:
+            content = re.sub('>SCT95.*<',f'>SCT95 {bitmap}<',content)
+        else:
+            content = re.sub('>SSO<',f'//Bitmap funcionalidades\n>SCT95 {bitmap}<\n>SSO<',content)
         content = re.sub('>SED181.*','>SED181 CL58++ +- GF0 AX {QUV00,9,3 QUV10,9,130 QCT14,7,10 QCT15,7,10 QCT17,7,10 QCT95,7,10}<',content)
         with open('fucionalidades_github_vl8.xls','a',encoding='utf-8') as f:
             f.write(f'{os.path.basename(file)};{bitmap}\n')
