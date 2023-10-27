@@ -5,6 +5,7 @@ username="AERO"
 password="aero123"
 database="xe"
 host="10.1.2.10"
+port="1521"
 
 # Script SQL a ser executado
 script_sql="/media/brida/OS/BRIDA_SQL/teste_parser_DEV.sql"
