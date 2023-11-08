@@ -7,10 +7,11 @@ readme = "README.md"
 packages = [{include = "working_tools"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 aes-pkcs5 = "^1.0.2"
 pycryptodome = "^3.19.0"
 cx-oracle = "^8.3.0"
+colorama = "^0.4.6"
 
 
 [build-system]
