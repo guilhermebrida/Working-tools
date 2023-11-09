@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Defina a pasta de origem e a pasta de destino
-pasta_origem_svn="/media/brida/OS/ScriptsConfigurador/VL10/Configuracao"
-pasta_origem_git="/media/brida/OS/Git Repo/virloc10/CAN-Sensor"
-pasta_destino="/media/brida/OS/@Sandbox/can_vl10"
+# pasta_origem_svn="/media/brida/OS/ScriptsConfigurador/VL10/Configuracao"
+pasta_origem_svn="/media/brida/OS/ScriptsConfigurador/VL10/Perfil Conducao"
+pasta_origem_git="/media/brida/OS/Git Repo/vircom5/Perfil"
+pasta_destino="/media/brida/OS/@Sandbox/can_vl10vc5"
 
-planilha_scripts_comparados="/media/brida/OS/Python_scripts/Working-tools/docs/scripts_comparados.xls"
+planilha_scripts_comparados="/media/brida/OS/Python_scripts/Working-tools/docs/scripts_comparados_vc5.xls"
 
 
 # Defina o caminho do arquivo de lista
