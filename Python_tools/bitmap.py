@@ -39,6 +39,16 @@ def bitmap_funcionaliades(index):
     return bitmap
 
 
+def gera_bitmap(file):
+    with open(file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    resultados = {chave: True if (busca := re.search(padrao, content)) is not None 
+                    else False for chave, padrao in padroes.items()}
+
+    indices = [i for i, x in enumerate(resultados.values()) if x == True]
+    bitmap = bitmap_funcionaliades(indices)
+    return bitmap
+
 def change_files(path):
     for file in path:
         with open(file, 'r', encoding='utf-8') as f:

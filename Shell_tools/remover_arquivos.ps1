@@ -1,6 +1,6 @@
 
 $pasta_origem = "C:/ScriptsConfigurador/VL10/Perfil Conducao"
-$arquivo_lista = "C:/Python_scripts/Working-tools/docs/removido_vl1012.txt"
+$arquivo_lista = "C:/Python_scripts/Working-tools/docs/vc5vc7_perfil.txt"
 
 foreach ($nome_arquivo in Get-Content $arquivo_lista) {
     $caminho_arquivo_origem = Join-Path $pasta_origem $nome_arquivo

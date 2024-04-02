@@ -3,7 +3,7 @@ import os
 import platform
 ##CRIA O ARQUIVO txt A PARTIR DE UM JSON NO SVN
 
-linuxPath = '/media/brida/OS/@Sandbox/can_vl10vc5'
+linuxPath = '/media/brida/OS/@Sandbox/vc5vl10_perfil'
 windowsPath = 'C:/@Sandbox/can_vl10vc5'
 
 with open('docs/scripts_vc5_vl10.txt','r', encoding='utf-8')as f:
