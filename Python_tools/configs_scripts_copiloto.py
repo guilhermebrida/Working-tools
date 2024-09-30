@@ -57,23 +57,28 @@ def get_configs(files):
         print(limpador)
         bitmap = Copiloto(content,hw).get_bitmap()
         print(bitmap)
+        _,dict = bp.gera_bitmap(file)
+        print(dict)
         if bitmap is None:
-            bitmap = bp.gera_bitmap(file)
+            bitmap,_ = bp.gera_bitmap(file)
             print(f'get_bit {bitmap}')
+
+        # for key,value in dict.items():
+        #     print(key, value)
               
-        with open(f'Configs_scripts_suzano_{hw}.xls','a',encoding='utf-8') as f:
-            f.write(f'{os.path.basename(file)};{id_arquivo};{id_arquivo2};{vel};{vel_carreg};{vel_chuva};{tol_vel};{parada};{march};{verde};{excesso};{freio_motor};{aceleracao};{freada};{conducao};{descanso};{tol_descanso};{limpador};{bitmap}\n')
+        with open(f'Configs_scripts_JSL_{hw}.xls','a',encoding='utf-8') as f:
+            f.write(f'{os.path.basename(file)};{id_arquivo};{id_arquivo2};{vel};{vel_carreg};{vel_chuva};{tol_vel};{parada};{march};{verde};{excesso};{freio_motor};{aceleracao};{freada};{conducao};{descanso};{tol_descanso};{limpador};{bitmap};{dict}\n')
 
 
 
 
 
 if __name__ == "__main__":
-    hw = 'VL12'
+    hw = 'VL8'
     
-    if not os.path.exists(f'Configs_scripts_suzano_{hw}.xls'):
-        with open(f'Configs_scripts_suzano_{hw}.xls','w',encoding='utf-8') as f:
-            f.write('Arquivo;Tag1;Tag2;limite Vel;Limite Vel carregado;Limite Vel Chuva;Tolerancia Vel(s);Parada Motor Ligado;Marcha Lenta;Marcha Verde;Excesso RPM;RPM Freio Motor;Aceleração Brusca;Freada Brusca;Tempo max condução(s);tempo descanso(s);tempo tolerancia(s);Limpador;Bitmap Funcionalidades\n')
+    if not os.path.exists(f'Configs_scripts_JSL_{hw}.xls'):
+        with open(f'Configs_scripts_JSL_{hw}.xls','w',encoding='utf-8') as f:
+            f.write('Arquivo;Tag1;Tag2;limite Vel;Limite Vel carregado;Limite Vel Chuva;Tolerancia Vel(s);Parada Motor Ligado;Marcha Lenta;Marcha Verde;Excesso RPM;RPM Freio Motor;Aceleração Brusca;Freada Brusca;Tempo max condução(s);tempo descanso(s);tempo tolerancia(s);Limpador;Bitmap Funcionalidades;Funcionalidades\n')
         
 
     pasta = dlg.askdirectory()

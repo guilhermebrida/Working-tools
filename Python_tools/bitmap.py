@@ -47,7 +47,7 @@ def gera_bitmap(file):
 
     indices = [i for i, x in enumerate(resultados.values()) if x == True]
     bitmap = bitmap_funcionaliades(indices)
-    return bitmap
+    return bitmap, resultados
 
 def change_files(path):
     for file in path:
